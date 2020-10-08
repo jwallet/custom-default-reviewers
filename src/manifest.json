@@ -32,6 +32,11 @@
     "https://api.bitbucket.org/*",
     "storage"
   ],
+  "applications": {
+    "gecko": {
+      "id": "jwallet@bitbucket-custom-reviewers"
+    }
+  },
   "content_scripts": [
     {
       "js": [
