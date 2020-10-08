@@ -1,43 +1,52 @@
 {
-	"name": "Web Extension Starter",
-	"author": "ymdevs",
-	"version": "1.0.0",
-	"description": "A web browser extension starter - based on Typescript, React, Redux, Styled-Component, Webpack, and more. Runs on Chrome and Firefox.",
-	"icons": {
-		"128": "assets/icon-128.png"
-	},
-	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-	"permissions": [
-		"activeTab",
-		"alarms",
-		"bookmarks",
-		"cookies",
-		"storage",
-		"tabs",
-		"webRequest",
-		"webRequestBlocking",
-		"*://*/*"
-	],
-	"manifest_version": 2,
-	"background": {
-		"scripts": [
-			"background.js"
-		],
-		"persistent": true
-	},
-	"browser_action": {
-		"default_title": "Web Extension Starter",
-		"default_icon": "assets/icon-48.png",
-		"default_popup": "popup.html"
-	},
-	"options_ui": {
-		"page": "options.html",
-		"open_in_tab": true
-	},
-	"content_scripts": [
-		{
-			"js": ["counter.js"],
-			"matches": ["*://*/*"]
-		}
-	]
+  "manifest_version": 2,
+  "name": "Bitbucket Custom Default Reviewers",
+  "description": "Chrome/Firefox extension that lets the user set his own default pull request reviewers.",
+  "version": "1.0.0",
+  "author": "jwallet",
+  "homepage_url": "https://github.com/jwallet/bitbucket-custom-default-reviewers",
+  "icons": {
+    "16": "icons/icon_16px.png",
+    "32": "icons/icon_32px.png",
+    "48": "icons/icon_48px.png",
+    "64": "icons/icon_64px.png",
+    "128": "icons/icon_128px.png",
+    "256": "icons/icon_256px.png"
+  },
+  "page_action": {
+    "browser_style": true,
+    "default_icon": {
+      "16": "icons/icon_16px.png",
+      "32": "icons/icon_32px.png"
+    },
+    "show_matches": ["https://bitbucket.org/*", "https://*.bitbucket.org/*"],
+    "default_title": "Bitbucket Custom Default Reviewers"
+  },
+  "applications": {
+    "gecko": {
+      "id": "jwallet@bitbucket-custom-default-reviewers.com"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "https://bitbucket.org/*",
+    "https://api.bitbucket.org/*",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "main.js"
+      ],
+      "matches": ["https://bitbucket.org/*", "https://*.bitbucket.org/*"]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js",
+      "background-for-requests.js"
+    ],
+    "persistent": false
+  }
 }

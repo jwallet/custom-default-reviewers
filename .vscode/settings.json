@@ -1,11 +1,9 @@
 {
-	"editor.tabSize": 4,
-	"editor.detectIndentation": false,
-	"editor.insertSpaces": false,
-	"files.associations": {
-		"*.js": "javascript",
-		"*.jsx": "javascriptreact",
-		"*.ts": "typescript",
-		"*.tsx": "typescriptreact",
-	}
+  "files.eol": "\n",
+  "editor.tabSize": 4,
+  "files.exclude": {
+    "**/*.css": false
+  },
+  "editor.formatOnSave": true,
+  "javascript.validate.enable": false
 }
