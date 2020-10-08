@@ -5,7 +5,7 @@ import { getAuthorReviewerElement } from '../templates'
 import { getReviewersFieldValue, getAuthorReviewers } from '../data-selectors'
 
 export const getAuthorReviewerLineId = (user: IUser) =>
-    `#__rbb_author_reviewer_${user.account_id}`
+    `#__bbcdr_author_reviewer_${user.account_id}`
 
 function findUserInAuthorReviewers(user: IUser): HTMLElement {
     return document.getElementById(getAuthorReviewerLineId(user))
@@ -14,15 +14,15 @@ function findUserInAuthorReviewers(user: IUser): HTMLElement {
 function showAuthorsAddAllButton(): void {
     document
         .getElementById('author_reviewers')
-        .querySelector('.__rbb_reviewers_add_all')
-        .classList.remove('__refined_bitbucket_hide')
+        .querySelector('.__bbcdr_reviewers_add_all')
+        .classList.remove('__bbcdr_hide')
 }
 
 function hideAuthorsAddAllButton(): void {
     document
         .getElementById('author_reviewers')
-        .querySelector('.__rbb_reviewers_add_all')
-        .classList.add('__refined_bitbucket_hide')
+        .querySelector('.__bbcdr_reviewers_add_all')
+        .classList.add('__bbcdr_hide')
 }
 
 export function insertUserToAuthorReviewers(user: IUser): void {

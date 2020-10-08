@@ -4,10 +4,10 @@
 import { getRepoURL } from './page-detect'
 
 export const getDefaultReviewersStorageKey = () =>
-    `_rbb-default-reviewers.${getRepoURL()}`
+    `__bbcd-default-reviewers.${getRepoURL()}`
 
 export const getDashboardPullRequestsStorageKey = actionId =>
-    `_rbb-dashboard-pull-requests_${actionId}`
+    `__bbcd-dashboard-pull-requests_${actionId}`
 
 export function getStorageSyncValue(key: string) {
     return new Promise(resolve => {

@@ -20,7 +20,7 @@ export function getTypeaheadElement(): HTMLInputElement {
 }
 
 const getSearchReviewerResultLineId = (user: IUser) =>
-    `#__rbb_search_reviewer_result_${user.account_id}`
+    `#__bbcdr_search_reviewer_result_${user.account_id}`
 
 function getNotFoundResultElement({
     query,

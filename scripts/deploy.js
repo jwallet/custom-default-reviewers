@@ -24,7 +24,7 @@ void (async function() {
     const firefoxPromise = firefoxDeploy({
         issuer: process.env.FIREFOX_ISSUER,
         secret: process.env.FIREFOX_SECRET,
-        id: 'refined-bitbucket@refined-bitbucket.org',
+        id: 'jwallet@bitbucket-custom-default-reviewers',
         // eslint-disable-next-line import/no-unresolved
         version: require('../extension/manifest.json').version, // eslint-disable-line global-require
         src: fs.createReadStream(zipPath),

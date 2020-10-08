@@ -58,7 +58,7 @@ async function handleAddAllUsers(e) {
 
 function getActionsElement(): HTMLElement {
     return (
-        <div class="__rbb_reviewers_actions">
+        <div class="__bbcdr_reviewers_actions">
             <div style={{ flexGrow: 1 }} />
             <div class="aui-buttons">
                 <button

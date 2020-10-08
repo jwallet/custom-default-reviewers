@@ -1,5 +1,5 @@
 /* overwrite style */
-#id_reviewers_group .__rbb_reviewers_container {
+#id_reviewers_group .__bbcdr_reviewers_container {
     height: initial !important;
     background: none;
 }
@@ -7,17 +7,21 @@
     padding-bottom: 4px !important;
 }
 
+.__bbcdr_hide {
+    display: none;
+}
+
 /* custom style */
-.__rbb_reviewers_actions {
+.__bbcdr_reviewers_actions {
     display: flex;
     align-items: center;
     margin: -2em 0 4px;
 }
-.__rbb_reviewers_actions button {
+.__bbcdr_reviewers_actions button {
     transition: background-color 0.5s ease;
 }
 
-.__rbb_reviewers_add_all {
+.__bbcdr_reviewers_add_all {
     background: #0052cc;
     background-color: rgb(0, 82, 204);
     font-weight: 400;
@@ -30,12 +34,12 @@
     line-height: 20px;
     color: #fff;
 }
-.__rbb_reviewers_add_all a::after {
+.__bbcdr_reviewers_add_all a::after {
     content: '\f103';
     font-family: 'Atlassian Icons';
     color: #fff;
 }
-.__rbb_reviewers_add_all a {
+.__bbcdr_reviewers_add_all a {
     text-decoration: none;
     outline: none;
 }

@@ -2,8 +2,6 @@
 
 import onetime from 'onetime'
 
-// Some of this functions are borrowed from https://github.com/sindresorhus/refined-github/blob/master/source/libs/page-detect.js
-
 // Drops leading and trailing slash to avoid /\/?/ everywhere
 const getCleanPathname = () => location.pathname.replace(/^[/]|[/]$/g, '')
 

@@ -14,7 +14,7 @@ import {
 import { isCreatePullRequestURL } from '../../page-detect'
 
 export const getSelectedReviewerLineId = (user: IUser) =>
-    `#__rbb_selected_reviewer_${user.account_id}`
+    `#__bbcdr_selected_reviewer_${user.account_id}`
 
 function findUserInSelectedReviewers(user: IUser): HTMLElement {
     return document.getElementById(getSelectedReviewerLineId(user))

@@ -5,7 +5,7 @@ import { getRecentReviewerElement } from '../templates'
 import { getReviewersFieldValue, getRecentReviewers } from '../data-selectors'
 
 export const getRecentReviewerLineId = (user: IUser) =>
-    `#__rbb_recent_reviewer_${user.account_id}`
+    `#__bbcdr_recent_reviewer_${user.account_id}`
 
 function findUserInRecentReviewers(user: IUser): HTMLElement {
     return document.getElementById(getRecentReviewerLineId(user))
@@ -14,15 +14,15 @@ function findUserInRecentReviewers(user: IUser): HTMLElement {
 function showRecentsAddAllButton(): void {
     document
         .getElementById('recent_reviewers')
-        .querySelector('.__rbb_reviewers_add_all')
-        .classList.remove('__refined_bitbucket_hide')
+        .querySelector('.__bbcdr_reviewers_add_all')
+        .classList.remove('__bbcdr_hide')
 }
 
 function hideRecentsAddAllButton(): void {
     document
         .getElementById('recent_reviewers')
-        .querySelector('.__rbb_reviewers_add_all')
-        .classList.add('__refined_bitbucket_hide')
+        .querySelector('.__bbcdr_reviewers_add_all')
+        .classList.add('__bbcdr_hide')
 }
 
 export function insertUserToRecentReviewers(user: IUser): void {

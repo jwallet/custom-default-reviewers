@@ -96,25 +96,25 @@ const formElement: HTMLElement = (
             </ul>
         </div>
 
-        <div className="select2-container select2-container-multi aui-select2-container text long-field __rbb_reviewers_container">
+        <div className="select2-container select2-container-multi aui-select2-container text long-field __bbcdr_reviewers_container">
             <ul
                 id="recent_reviewers"
                 className="select2-choices"
                 style={reviewersSectionStyle}
             >
-                <li class="__rbb_reviewers_add_all __refined_bitbucket_hide">
+                <li class="__bbcdr_reviewers_add_all __bbcdr_hide">
                     Recents
                     <a href="#" title="Add All" onClick={handleRecentsAddAll} />
                 </li>
             </ul>
         </div>
-        <div className="select2-container select2-container-multi aui-select2-container text long-field __rbb_reviewers_container">
+        <div className="select2-container select2-container-multi aui-select2-container text long-field __bbcdr_reviewers_container">
             <ul
                 id="author_reviewers"
                 className="select2-choices"
                 style={reviewersSectionStyle}
             >
-                <li class="__rbb_reviewers_add_all __refined_bitbucket_hide">
+                <li class="__bbcdr_reviewers_add_all __bbcdr_hide">
                     Authors
                     <a href="#" title="Add All" onClick={handleAuthorsAddAll} />
                 </li>
