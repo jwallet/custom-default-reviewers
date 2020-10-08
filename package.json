@@ -16,7 +16,7 @@
     "watch": "webpack --watch",
     "sync-version": "node scripts/sync-version",
     "package": "node scripts/package",
-    "deploy": "npm-run-all test sync-version package && node scripts/deploy",
+    "deploy": "npm-run-all sync-version package && node scripts/deploy",
     "major": "npm version --no-git-tag-version major && npm run sync-version",
     "minor": "npm version --no-git-tag-version minor && npm run sync-version",
     "patch": "npm version --no-git-tag-version patch && npm run sync-version"

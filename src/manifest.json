@@ -19,13 +19,11 @@
       "16": "icons/icon_16px.png",
       "32": "icons/icon_32px.png"
     },
-    "show_matches": ["https://bitbucket.org/*", "https://*.bitbucket.org/*"],
+    "show_matches": [
+      "https://bitbucket.org/*",
+      "https://*.bitbucket.org/*"
+    ],
     "default_title": "Bitbucket Custom Default Reviewers"
-  },
-  "applications": {
-    "gecko": {
-      "id": "jwallet@bitbucket-custom-default-reviewers.com"
-    }
   },
   "permissions": [
     "activeTab",
@@ -39,7 +37,10 @@
       "js": [
         "main.js"
       ],
-      "matches": ["https://bitbucket.org/*", "https://*.bitbucket.org/*"]
+      "matches": [
+        "https://bitbucket.org/*",
+        "https://*.bitbucket.org/*"
+      ]
     }
   ],
   "background": {
