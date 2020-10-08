@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "name": "Bitbucket Custom Reviewers",
+  "description": "Chrome/Firefox extension that lets the user set his own default pull request reviewers.",
+  "version": "1.0.1",
+  "author": "jwallet",
+  "homepage_url": "https://github.com/jwallet/bitbucket-custom-reviewers",
+  "icons": {
+    "16": "icons/icon_16px.png",
+    "32": "icons/icon_32px.png",
+    "48": "icons/icon_48px.png",
+    "64": "icons/icon_64px.png",
+    "128": "icons/icon_128px.png",
+    "256": "icons/icon_256px.png"
+  },
+  "permissions": [
+    "activeTab",
+    "https://bitbucket.org/*",
+    "https://api.bitbucket.org/*",
+    "storage"
+  ],
+  "applications": {
+    "gecko": {
+      "id": "{e25bc27e-d67f-4a12-bedf-3c8865f63bbf}"
+    }
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "main.js"
+      ],
+      "matches": [
+        "https://bitbucket.org/*",
+        "https://*.bitbucket.org/*"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js",
+      "background-for-requests.js"
+    ]
+  }
+}
