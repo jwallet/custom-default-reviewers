@@ -25,6 +25,7 @@ Afterwards, any new pull request in the same repository will have those reviewer
 
 
 ### Releases
+- Firefox add-on: https://addons.mozilla.org/en-CA/firefox/addon/bitbucket-custom-reviewers/
 - [Release on Github](https://github.com/jwallet/bitbucket-custom-reviewers/releases) as zip file.
     - On firefox, load the `manifest.json` in debug addon tab.
     - On chrome, load the unzipped folder as a unpacked extension.
