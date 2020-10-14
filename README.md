@@ -1,5 +1,5 @@
-## Bitbucket Cloud Custom Default Reviewers
-Firefox add-on / Chrome extension for Bitbucket Cloud that lets you select and save your own default reviewers when creating a pull request, afterwards it will always be rehydrated.
+## Custom Default Reviewers on BitBucket Cloud
+Firefox add-on / Chrome extension that overwrites the repository default reviewers by a custom selection made by the user when creating a pull request on Bitbucket Cloud.
 
 ![image](https://raw.githubusercontent.com/jwallet/bitbucket-custom-reviewers/main/screenshot.png)
 
