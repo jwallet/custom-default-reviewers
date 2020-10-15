@@ -37,7 +37,6 @@
   ],
   "background": {
     "scripts": [
-      "background.js",
       "background-for-requests.js"
     ]
   }

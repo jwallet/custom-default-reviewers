@@ -2,11 +2,13 @@
 // @jsx h
 
 import { h } from 'dom-chef'
+import elementReady from 'element-ready'
 import onetime from 'onetime'
 import { IUser, mapUserXhrToUser } from './_core/models'
 
 export const getApiToken: () => string = onetime(
     (): string => {
+        elementReady('meta[name="apitoken"]')
         const meta: HTMLMetaElement = (document.querySelector(
             'meta[name="apitoken"]'
         ): any)

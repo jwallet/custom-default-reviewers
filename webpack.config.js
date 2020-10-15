@@ -8,7 +8,6 @@ module.exports = {
     devtool: 'source-map',
     entry: {
         main: './src/main',
-        background: './src/background',
         'background-for-requests': './src/background-for-requests',
     },
     plugins: [
