@@ -7,7 +7,7 @@ Firefox add-on / Chrome extension that overwrites the repository default reviewe
 
 ##### Core feature
 
-Once you click on `Save As Default` it will save your current selection as your default reviewers in your browser connected account or fallback to your browser storage.
+Once you click on `Save` it will save your current selection as your default reviewers in your browser connected account or fallback to your browser storage.
 
 Afterwards, any new pull request in the same repository will have those reviewers rehydrated as your default reviewers.
 
