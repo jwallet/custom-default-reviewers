@@ -7,7 +7,7 @@ import {
     insertUserToSelectedReviewers,
     removeUserFromRecentReviewers,
     removeUserFromAuthorReviewers,
-    insertUsersToSelectedReviewers,
+    resetUsersToSelectedReviewers,
 } from '../ui-renderer'
 import {
     getCurrentPullRequestAuthorAccountId,
@@ -21,6 +21,7 @@ import {
     addReviewer,
     isUserRecentReviewer,
     addReviewers,
+    resetReviewers,
 } from './form-reviewers-input'
 
 const authorId = getCurrentPullRequestAuthorAccountId()
@@ -96,8 +97,8 @@ export function addSearchedReviewer(user: IUser) {
 }
 
 export function addSearchedReviewers(users: IUser[]) {
-    addReviewers(users)
-    insertUsersToSelectedReviewers(users)
+    resetReviewers(users)
+    resetUsersToSelectedReviewers(users)
 
     users.forEach((user: IUser) => {
         if (isUserRecentReviewer(user)) {

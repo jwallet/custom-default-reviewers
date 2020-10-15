@@ -6,6 +6,7 @@ import {
     isUserRecentReviewer,
     getAuthorReviewers,
     isUserAuthorReviewer,
+    addReviewers,
 } from '../data-selectors'
 import {
     clearSelectedReviewers,
@@ -50,6 +51,7 @@ function handleRemoveAllClick(): void {
 
 function handleRecentsAddAll(): void {
     const recents = getRecentReviewers()
+    addReviewers(recents)
     insertUsersToSelectedReviewers(recents)
     clearRecentReviewers()
     recents.forEach(
@@ -60,6 +62,7 @@ function handleRecentsAddAll(): void {
 
 function handleAuthorsAddAll(): void {
     const authors = getAuthorReviewers()
+    addReviewers(authors)
     insertUsersToSelectedReviewers(authors)
     clearAuthorReviewers()
     authors.forEach(

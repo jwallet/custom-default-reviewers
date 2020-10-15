@@ -34,24 +34,29 @@ export function insertUserToSelectedReviewers(user: IUser): void {
 
 export function insertUsersToSelectedReviewers(users: IUser[]): void {
     users.forEach((u: IUser) => {
-        addReviewer(u)
         insertUserToSelectedReviewers(u)
     })
 }
 
+export function resetUsersToSelectedReviewers(users: IUsers[]): void {
+    clearSelectedReviewers()
+    insertUsersToSelectedReviewers(users)
+}
+
+export async function getSavedDefaultReviewers(): Promise<IUser[]> {
+    return (await getStorageSyncValue(getDefaultReviewersStorageKey())) || []
+}
+
 export async function initSelectedReviewers(): void {
-    const defaultReviewers = getDefaultReviewers()
-    if (isCreatePullRequestURL()) {
-        const savedReviewers = await getStorageSyncValue(
-            getDefaultReviewersStorageKey()
-        )
-        if (savedReviewers) {
-            addReviewers(savedReviewers)
-            insertUsersToSelectedReviewers(savedReviewers)
-            return
-        }
-    }
-    insertUsersToSelectedReviewers(defaultReviewers)
+    const defaultReviewers: IUser[] = getDefaultReviewers()
+    const savedReviewers: IUser[] = await getSavedDefaultReviewers()
+    const reviewers =
+        savedReviewers.length > 0 && defaultReviewers.length === 0
+            ? savedReviewers
+            : defaultReviewers
+
+    addReviewers(reviewers)
+    insertUsersToSelectedReviewers(reviewers)
 }
 
 export function clearSelectedReviewers(): void {

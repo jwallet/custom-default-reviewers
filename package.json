@@ -1,7 +1,7 @@
 {
-  "name": "bitbucket-custom-reviewers",
-  "description": "Chrome/Firefox extension that lets the user set his own default pull request reviewers.",
-  "version": "1.0.1",
+  "name": "custom-default-reviewers",
+  "description": "Firefox add-on / Chrome extension that overwrites the repository default reviewers by a custom selection made by the user when creating a pull request on Bitbucket Cloud.",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
     "precommit": "lint-staged",
@@ -29,14 +29,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jwallet/bitbucket-custom-reviewers.git"
+    "url": "git+https://github.com/jwalletcustom-default-reviewers.git"
   },
   "keywords": [
     "bitbucket"
   ],
   "author": "jwallet",
   "license": "MIT",
-  "homepage": "https://github.com/jwallet/bitbucket-custom-reviewers#readme",
+  "homepage": "https://github.com/jwallet/custom-default-reviewers#readme",
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",

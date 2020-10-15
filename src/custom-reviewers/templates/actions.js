@@ -1,9 +1,9 @@
 // @flow
 import { h } from 'dom-chef'
+import { isCreatePullRequestURL } from '../../page-detect'
 import {
     setStorageSyncValue,
     getDefaultReviewersStorageKey,
-    getStorageSyncValue,
 } from '../../storage'
 import {
     getCurrentReviewers,
@@ -11,9 +11,16 @@ import {
     getReviewersFieldValue,
     getSearchReviewersResults,
     addSearchedReviewers,
+    resetReviewers,
+    getDefaultReviewers,
 } from '../data-selectors'
+import {
+    clearSelectedReviewers,
+    insertUsersToSelectedReviewers,
+    getSavedDefaultReviewers,
+} from '../ui-renderer'
 
-const smallButtonStlye = {
+const smallButtonStyle = {
     height: 'initial',
     lineHeight: 'initial',
 }
@@ -36,9 +43,7 @@ async function handleSaveSelectionAsDefault(e) {
         getCurrentReviewers()
     )
 
-    const savedReviewers: IUser[] = await getStorageSyncValue(
-        getDefaultReviewersStorageKey()
-    )
+    const savedReviewers: IUser[] = await getSavedDefaultReviewers()
     const currentReviewersIds: string[] = getReviewersFieldValue()
 
     buttonFeedback(
@@ -56,6 +61,24 @@ async function handleAddAllUsers(e) {
     buttonFeedback(e.target, result)
 }
 
+async function handleReload(e) {
+    const savedReviewers: IUser[] = await getSavedDefaultReviewers()
+    console.log(savedReviewers)
+    if (savedReviewers.length > 0) {
+        addSearchedReviewers(savedReviewers)
+    }
+    buttonFeedback(e.target, savedReviewers.length > 0)
+}
+
+async function handleReset(e) {
+    const defaultReviewers: IUser[] = getDefaultReviewers()
+    console.log(defaultReviewers)
+    if (defaultReviewers.length > 0) {
+        addSearchedReviewers(defaultReviewers)
+    }
+    buttonFeedback(e.target, defaultReviewers.length > 0)
+}
+
 function getActionsElement(): HTMLElement {
     return (
         <div class="__bbcdr_reviewers_actions">
@@ -64,20 +87,45 @@ function getActionsElement(): HTMLElement {
                 <button
                     type="button"
                     class="aui-button"
-                    style={smallButtonStlye}
+                    style={smallButtonStyle}
                     onClick={handleAddAllUsers}
-                    title="Load all available users as search results"
+                    title="Add all available users as reviewers."
                 >
                     Add All
+                </button>
+
+                <button
+                    type="button"
+                    class="aui-button"
+                    style={smallButtonStyle}
+                    onClick={handleReload}
+                    title="Reload your saved default reviewers selection."
+                >
+                    Reload
                 </button>
                 <button
                     type="button"
                     class="aui-button"
-                    style={smallButtonStlye}
-                    onClick={handleSaveSelectionAsDefault}
-                    title="Save current reviewers as default for this repository"
+                    style={smallButtonStyle}
+                    onClick={handleReset}
+                    title={
+                        isCreatePullRequestURL()
+                            ? 'Reset to the repository default reviewers (if any).'
+                            : 'Reset to the initial reviewers of the pull request.'
+                    }
                 >
-                    Save As Default
+                    Reset
+                </button>
+            </div>
+            <div class="aui-buttons">
+                <button
+                    type="button"
+                    class="aui-button"
+                    style={smallButtonStyle}
+                    onClick={handleSaveSelectionAsDefault}
+                    title="Save current reviewers as your new default for this repositor.y"
+                >
+                    Save
                 </button>
             </div>
         </div>

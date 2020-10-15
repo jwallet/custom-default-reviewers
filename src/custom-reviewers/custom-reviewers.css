@@ -6,6 +6,15 @@
 #id_description_group {
     padding-bottom: 4px !important;
 }
+#recent_reviewers,
+#author_reviewers,
+#selected_reviewers,
+#recent_reviewers:hover,
+#author_reviewers:hover,
+#selected_reviewers:hover {
+    background-color: #fff !important;
+    cursor: default !important;
+}
 
 .__bbcdr_hide {
     display: none;
