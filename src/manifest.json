@@ -24,6 +24,7 @@
       "id": "{e25bc27e-d67f-4a12-bedf-3c8865f63bbf}"
     }
   },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "content_scripts": [
     {
       "js": [
