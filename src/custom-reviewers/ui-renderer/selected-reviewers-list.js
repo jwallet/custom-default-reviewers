@@ -2,11 +2,7 @@
 import { h } from 'dom-chef'
 import { IUser } from '../../_core/models'
 import { getSelectedReviewerElement } from '../templates'
-import {
-    getDefaultReviewers,
-    addReviewer,
-    addReviewers,
-} from '../data-selectors'
+import { getDefaultReviewers, resetReviewers } from '../data-selectors'
 import {
     getStorageSyncValue,
     getDefaultReviewersStorageKey,
@@ -50,12 +46,13 @@ export async function getSavedDefaultReviewers(): Promise<IUser[]> {
 export async function initSelectedReviewers(): void {
     const defaultReviewers: IUser[] = getDefaultReviewers()
     const savedReviewers: IUser[] = await getSavedDefaultReviewers()
+
     const reviewers =
         savedReviewers.length > 0 && defaultReviewers.length === 0
             ? savedReviewers
             : defaultReviewers
 
-    addReviewers(reviewers)
+    resetReviewers(reviewers)
     insertUsersToSelectedReviewers(reviewers)
 }
 

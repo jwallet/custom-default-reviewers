@@ -18,12 +18,14 @@ import {
 import {
     syncSearchResultsChanges,
     syncAuthorReviewersChanges,
+    syncInputReviewersChanges,
 } from './observers'
 import { initTypeaheadElement } from './templates/typeahead'
 
 export default async function customReviewersFeature() {
-    // Get ready
-    const container = await elementReady('#id_reviewers_group')
+    // await and get container
+    await elementReady('#reviewers')
+    const container = document.getElementById('id_reviewers_group')
 
     // Clean ui
     removeReviewerSearchField()
@@ -36,15 +38,15 @@ export default async function customReviewersFeature() {
     insertForm(container)
     initTypeaheadElement()
 
-    // Init
-    await initSelectedReviewers()
-    initRecentReviewers()
-    initAuthorReviewers()
-
     // Observers
     syncAuthorReviewersChanges()
     syncSearchResultsChanges()
 
     // load users
     await prefetchAllReviewers()
+
+    // Init
+    await initSelectedReviewers()
+    initRecentReviewers()
+    initAuthorReviewers()
 }
