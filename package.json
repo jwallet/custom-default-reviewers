@@ -1,6 +1,6 @@
 {
   "name": "custom-default-reviewers",
-  "description": "Firefox add-on / Chrome extension that overwrites the repository default reviewers by a custom selection made by the user when creating a pull request on Bitbucket Cloud.",
+  "description": "Firefox add-on / Chrome extension that overwrites the repository default reviewers by a custom selection of reviewers on Bitbucket Cloud.",
   "version": "1.0.2",
   "main": "index.js",
   "scripts": {
@@ -34,7 +34,11 @@
   "keywords": [
     "bitbucket"
   ],
-  "author": "jwallet",
+  "author": {
+    "name": "jwallet",
+    "email": "wizik20@gmail.com",
+    "url": "https://wwww.github.com/jwallet"
+  },
   "license": "MIT",
   "homepage": "https://github.com/jwallet/custom-default-reviewers#readme",
   "devDependencies": {
