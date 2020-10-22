@@ -2,10 +2,6 @@
 import { h } from 'dom-chef'
 import { isCreatePullRequestURL } from '../../page-detect'
 import {
-    setStorageSyncValue,
-    getDefaultReviewersStorageKey,
-} from '../../storage'
-import {
     getCurrentReviewers,
     prefetchAllReviewers,
     getReviewersFieldValue,
@@ -17,6 +13,7 @@ import {
 import {
     clearSelectedReviewers,
     insertUsersToSelectedReviewers,
+    setSavedDefaultReviewers,
     getSavedDefaultReviewers,
 } from '../ui-renderer'
 
@@ -38,10 +35,7 @@ const buttonFeedback = (button, succeeded) => {
 }
 
 async function handleSaveSelectionAsDefault(e) {
-    await setStorageSyncValue(
-        getDefaultReviewersStorageKey(),
-        getCurrentReviewers()
-    )
+    await setSavedDefaultReviewers(getCurrentReviewers())
 
     const savedReviewers: IUser[] = await getSavedDefaultReviewers()
     const currentReviewersIds: string[] = getReviewersFieldValue()
@@ -63,7 +57,6 @@ async function handleAddAllUsers(e) {
 
 async function handleReload(e) {
     const savedReviewers: IUser[] = await getSavedDefaultReviewers()
-    console.log(savedReviewers)
     if (savedReviewers.length > 0) {
         addSearchedReviewers(savedReviewers)
     }
@@ -72,7 +65,6 @@ async function handleReload(e) {
 
 async function handleReset(e) {
     const defaultReviewers: IUser[] = getDefaultReviewers()
-    console.log(defaultReviewers)
     if (defaultReviewers.length > 0) {
         addSearchedReviewers(defaultReviewers)
     }

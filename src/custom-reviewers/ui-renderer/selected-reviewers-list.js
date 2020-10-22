@@ -6,8 +6,10 @@ import { getDefaultReviewers, resetReviewers } from '../data-selectors'
 import {
     getStorageSyncValue,
     getDefaultReviewersStorageKey,
+    getStorageLocalValue,
+    setStorageSyncValue,
+    setStorageLocalValue,
 } from '../../storage'
-import { isCreatePullRequestURL } from '../../page-detect'
 
 export const getSelectedReviewerLineId = (user: IUser) =>
     `#__bbcdr_selected_reviewer_${user.account_id}`
@@ -40,7 +42,17 @@ export function resetUsersToSelectedReviewers(users: IUsers[]): void {
 }
 
 export async function getSavedDefaultReviewers(): Promise<IUser[]> {
-    return (await getStorageSyncValue(getDefaultReviewersStorageKey())) || []
+    const key = getDefaultReviewersStorageKey()
+    const syncStorage = await getStorageSyncValue(key)
+    const localStorage = await getStorageLocalValue(key)
+    return syncStorage || localStorage || []
+}
+
+export async function setSavedDefaultReviewers(reviewers: IUser[]): void {
+    const key = getDefaultReviewersStorageKey()
+    const syncStorage = await setStorageSyncValue(key, reviewers)
+    const localStorage = await setStorageLocalValue(key, reviewers)
+    return syncStorage || localStorage || []
 }
 
 export async function initSelectedReviewers(): void {

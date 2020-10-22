@@ -8,11 +8,9 @@ import customReviewersFeature from './custom-reviewers/custom-reviewers'
 import { isCreatePullRequestURL, isEditPullRequestURL } from './page-detect'
 
 function init() {
-    if (isCreatePullRequestURL()) {
-        customReviewersFeature()
-    } else if (isEditPullRequestURL()) {
-        customReviewersFeature()
-    }
+    if (!isCreatePullRequestURL() && !isEditPullRequestURL()) return
+
+    customReviewersFeature()
 }
 
 init()
