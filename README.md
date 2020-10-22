@@ -1,7 +1,8 @@
 ## Custom Default Reviewers on BitBucket Cloud
+
 Firefox add-on / Chrome extension that overwrites the repository default reviewers by a custom selection made by the user when creating a pull request on Bitbucket Cloud.
 
-![image](https://raw.githubusercontent.com/jwallet/custom-default-reviewers/main/screenshot.png)
+![image](https://raw.githubusercontent.com/jwallet/custom-default-reviewers/main/assets/screenshot.png)
 
 ### What the extension does that Bitbucket does not
 
@@ -27,7 +28,8 @@ Afterwards, any new pull request in the same repository will have those reviewer
 -   Search results are kept
 
 ### Releases
-- Firefox add-on: https://addons.mozilla.org/en-CA/firefox/addon/bitbucket-custom-reviewers/
-- [Release on Github](https://github.com/jwallet/custom-default-reviewers/releases) (as zip files).
-    - On firefox, unzip the `firefox.zip` archive and load the `manifest.json` in debug addon tab.
-    - On chrome, unzip the `chrome.zip` archive and load the main folder as an unpacked extension.
+
+-   Firefox add-on: https://addons.mozilla.org/en-CA/firefox/addon/bitbucket-custom-reviewers/
+-   [Release on Github](https://github.com/jwallet/custom-default-reviewers/releases) (as zip files).
+    -   On firefox, unzip the `firefox.zip` archive and load the `manifest.json` in debug addon tab.
+    -   On chrome, unzip the `chrome.zip` archive and load the main folder as an unpacked extension.

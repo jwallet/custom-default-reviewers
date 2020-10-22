@@ -34,6 +34,7 @@ node_modules
 
 # Folder with files to be distributed
 dist
+extension.crx
 
 # Created by https://www.gitignore.io/api/osx
 
