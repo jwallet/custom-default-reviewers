@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Bitbucket Cloud Custom Default Reviewers",
   "description": "Overwrites the repository default reviewers by a custom selection of reviewers on bitbucket.org (cloud platform).",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "jwallet",
   "homepage_url": "https://github.com/jwallet/custom-default-reviewers",
   "icons": {

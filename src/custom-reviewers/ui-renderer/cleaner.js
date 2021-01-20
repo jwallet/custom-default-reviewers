@@ -4,7 +4,8 @@ import { h } from 'dom-chef'
 
 // Remove official reviewers search box
 export function removeReviewerSearchField(): void {
-    $('#s2id_reviewers').remove()
+    $('#s2id_reviewers').remove() // legacy
+    $('.reviewers-react-container').remove() // new ui
 }
 
 // Remove official suggested-recent reviewers list
